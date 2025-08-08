@@ -6,9 +6,11 @@ import os
 import random
 import string
 import matplotlib.pyplot as plt
-import matplotlib
+import matplotlib as mpl
 
-matplotlib.font_manager.fontManager.addfont('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc')
+
+mpl.rcParams['font.family'] = ["WenQuanYi Micro Hei"]
+mpl.rcParams["axes.unicode_minus"] = False
 
 # 配置文件路径
 DATA_FILE = "arknights_scores.json"
