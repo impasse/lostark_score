@@ -5,6 +5,10 @@ from datetime import datetime
 import os
 import random
 import string
+import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.font_manager.fontManager.addfont('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc')
 
 # 配置文件路径
 DATA_FILE = "arknights_scores.json"
@@ -170,9 +174,6 @@ def main():
 
             # 显示评分分布图表
             st.subheader("评分分布")
-            import matplotlib.pyplot as plt
-
-            plt.rcParams['font.family'] = 'Heiti TC'
 
             # 过滤出有评分的派系
             rated_factions = [f for f in FACTIONS if faction_stats[f]["评分人数"] > 0]
@@ -241,10 +242,6 @@ def main():
 
                 # 显示评分分布
                 st.subheader("评分分布图表")
-                import matplotlib.pyplot as plt
-                import matplotlib
-
-                matplotlib.font_manager.fontManager.addfont('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc')
 
                 plt.rcParams['font.family'] = 'WenQuanYi Micro Hei'
 
